@@ -1,60 +1,94 @@
-## Global Timezones
+## ipstack
 
-** global-timezones ** is a robust npm package that provides comprehensive information about time zones, including detailed Daylight Saving Time (DST) data. This package is designed to help developers easily access accurate and up-to-date time zone information for various applications such as scheduling, logging, and global event planning.
+** ipstack-api ** is an npm package that provides a simple and efficient way to convert IP addresses to detailed geographical information using the ipstack API. This package is ideal for developers who need to enrich their applications with location-based data, enabling features such as personalized content, fraud prevention, and enhanced analytics.
 
 ## Features
 
-- **Comprehensive Time Zone Data**: Access detailed information about time zones worldwide, including offset, standard time, and DST transitions.
-- **Daylight Saving Time Information**: Get precise DST start and end dates, along with the amount of time shifted.
+- **IP to Location**: Convert IP addresses to accurate geographical information, including country, region, city, latitude, and longitude.
+- **Additional Details**: Access additional data such as ZIP code, time zone, currency, and ISP information.
 - **Structured Format**: Data is well-organized and easy to navigate, ensuring seamless integration into your projects.
-- **Up-to-Date Information**: Regularly updated to reflect the latest geographical changes and new entries.
-- **TypeScript Support**: Fully typed definitions for TypeScript users, providing a better development experience and reducing errors.
-- **Easy to Use**: Simple API that makes it easy to fetch and utilize time zone data in your projects.
+- **TypeScript Support**: Seamless compatibility with both JavaScript and TypeScript projects.
+- **Easy to Use**: Straightforward API for quick and easy integration into your applications.
 
 # Install
 
-`npm i global-timezones`
+`npm i ipstack-api`
 
 # Usage
 
 - ES6 Module usage
 
   ```js
-  import { Timezone, ITimeZone } from "global-timezones";
+  import { ipstack, IIpstack } from "ipstack-api";
+  ipstack("8.8.8.8", "<your ipstack api key>", (err, response) => {
+    console.log(response);
+  });
   ```
-
-# Docs
-
-## Timezone Request method
-
-Here are all timezone related methods.
-
-#### Region.getAllTimezones()
-
-#### Region.sortedTimezones(field)
-
-Here field can be id or name. and sort always will be ascending
-
-#### Region.getFiltedTimezones(field, value, sort)
-
-Here field can be id or name. value will be the value you are looking for. and sort always will be ascending
 
 # Example structure data
 
-type: **json | ITimeZone**
+type: **json | IIpstack**
 
 ```js
-[
-  {
-    "id": 4,
-    "tzCode": "America/Adak",
-    "area": "Adak",
-    "gmt": "(GMT-10:00)",
-    "utc": "-10:00",
-    "dst": null
+{
+  "ip": "134.201.250.155",
+  "hostname": "134.201.250.155",
+  "type": "ipv4",
+  "continent_code": "NA",
+  "continent_name": "North America",
+  "country_code": "US",
+  "country_name": "United States",
+  "region_code": "CA",
+  "region_name": "California",
+  "city": "Los Angeles",
+  "zip": "90013",
+  "latitude": 34.0453,
+  "longitude": -118.2413,
+  "location": {
+    "geoname_id": 5368361,
+    "capital": "Washington D.C.",
+    "languages": [
+        {
+          "code": "en",
+          "name": "English",
+          "native": "English"
+        }
+    ],
+    "country_flag": "https://assets.ipstack.com/images/assets/flags_svg/us.svg",
+    "country_flag_emoji": "🇺🇸",
+    "country_flag_emoji_unicode": "U+1F1FA U+1F1F8",
+    "calling_code": "1",
+    "is_eu": false
   },
-  ...
-]
+  "time_zone": {
+    "id": "America/Los_Angeles",
+    "current_time": "2018-03-29T07:35:08-07:00",
+    "gmt_offset": -25200,
+    "code": "PDT",
+    "is_daylight_saving": true
+  },
+  "currency": {
+    "code": "USD",
+    "name": "US Dollar",
+    "plural": "US dollars",
+    "symbol": "$",
+    "symbol_native": "$"
+  },
+  "connection": {
+    "asn": 25876,
+    "isp": "Los Angeles Department of Water & Power"
+  },
+  "security": {
+    "is_proxy": false,
+    "proxy_type": null,
+    "is_crawler": false,
+    "crawler_name": null,
+    "crawler_type": null,
+    "is_tor": false,
+    "threat_level": "low",
+    "threat_types": null
+  }
+}
 ```
 
 ## Advertise for Job/Work Contract

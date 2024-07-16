@@ -10,6 +10,12 @@ const ipstack = (
     console.error("Please provide a callback!");
     return;
   }
+
+  if (ip === "::1") {
+    console.error("You are using local server!");
+    return;
+  }
+
   http.get(
     {
       hostname: "api.ipstack.com",
@@ -38,4 +44,5 @@ const ipstack = (
   );
 };
 
-export default ipstack;
+export { IIpstack };
+export { ipstack };

@@ -1,0 +1,29 @@
+{
+  "name": "ipstack-api",
+  "version": "1.0.0",
+  "description": "ipstack-ip-to-address is an npm package that provides a simple and efficient way to convert IP addresses to detailed geographical information using the ipstack API. This package is ideal for developers who need to enrich their applications with location-based data, enabling features such as personalized content, fraud prevention, and enhanced analytics.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ipstack",
+    "geography",
+    "geolocation",
+    "ip",
+    "iplocation",
+    "location",
+    "nodejs",
+    "typescript",
+    "javascript"
+  ],
+  "author": "Ujjwal Bera <ujjwalbera.dev@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^5.5.3"
+  },
+  "repository": "https://github.com/beraujjwal/ipstack.git"
+}
